@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 4, 2017 3:51:57 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping auto-import="true">
+  <class catalog="EcommerceEbook" name="model.pojo.Vendas" optimistic-lock="version" table="vendas">
+    <id name="id" type="java.lang.Integer">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <property name="livroId" type="java.lang.Integer">
+      <column name="livro_id"/>
+    </property>
+    <property name="valor" type="java.lang.Float">
+      <column name="valor" precision="12" scale="0"/>
+    </property>
+    <property name="nomeCliente" type="string">
+      <column length="200" name="nome_cliente"/>
+    </property>
+    <property name="emailCliente" type="string">
+      <column length="200" name="email_cliente"/>
+    </property>
+    <property name="foiBoleto" type="java.lang.Integer">
+      <column name="foi_boleto"/>
+    </property>
+    <property name="cartaoNome" type="string">
+      <column length="200" name="cartao_nome"/>
+    </property>
+    <property name="cartaoNumero" type="string">
+      <column length="50" name="cartao_numero"/>
+    </property>
+    <property name="cartaoCodigo" type="java.lang.Integer">
+      <column name="cartao_codigo"/>
+    </property>
+    <property name="cartaoDataVenc" type="date">
+      <column length="10" name="cartao_data_venc"/>
+    </property>
+  </class>
+</hibernate-mapping>
