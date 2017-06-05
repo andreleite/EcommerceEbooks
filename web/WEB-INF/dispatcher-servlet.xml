@@ -12,10 +12,6 @@
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
     <bean class="controller.LivrosController" id="livrosController" />
     <bean class="controller.VendaController" id="vendaController" />
-    
-    <context:annotation-config />
-    <context:component-scan base-package="controller" />
-    <mvc:annotation-driven />
 
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -25,7 +21,7 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">livrosController</prop>
+                <prop key="livros.htm">livrosController</prop>
                 <prop key="venda.htm">vendaController</prop>
             </props>
         </property>
@@ -35,12 +31,5 @@
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
           p:suffix=".jsp" />
-
-    <!--
-    The index controller.
-    -->
-    <bean name="indexController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="livroController" />
 
 </beans>

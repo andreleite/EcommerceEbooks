@@ -16,7 +16,8 @@ import org.hibernate.Session;
  * @author andreleite
  */
 public class LivrosDAO {
-    public static List<Livros> layDS() {
+    
+    public static List<Livros> getAll() {
         List<Livros> list = null;
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -28,5 +29,19 @@ public class LivrosDAO {
             e.printStackTrace();
         }
         return list;
+    }
+    
+        public static Livros get(String id) {
+        Livros livro = null;
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            String hql = "from Livros where id=" + id;
+            Query query = session.createQuery(hql);
+            livro = (Livros) query.uniqueResult();
+            session.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return livro;
     }
 }
