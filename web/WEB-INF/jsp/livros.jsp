@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Welcome to Spring Web MVC project</title>
+        <title>Ecommerce de ebooks</title>
     </head>
 
     <body>
@@ -20,13 +20,16 @@
                 <th>Comprar</th>
             </tr>
             <c:forEach var="livro" items="${livros}">
+            <c:url var="url" value="venda.jsp">
+                <c:param name="livro" value="${livro.getId()}" />
+            </c:url>
             <tr>
                 <td><c:out value="${livro.getNome()}"></c:out></td>
                 <td><c:out value="${livro.getAutor()}"></c:out></td>
                 <td><c:out value="${livro.getDescricao()}"></c:out></td>
                 <td><c:out value="${livro.getCategoria()}"></c:out></td>
                 <td><c:out value="${livro.getValor()}"></c:out></td>
-                <td><c:out value="${livro.getLink()}"></c:out></td>
+                <td><a href="${url}">Comprar</a></td>
             </tr>
             </c:forEach>
         </table>
