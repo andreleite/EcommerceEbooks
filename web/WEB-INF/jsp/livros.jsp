@@ -20,7 +20,7 @@
                 <th>Comprar</th>
             </tr>
             <c:forEach var="livro" items="${livros}">
-            <c:url var="url" value="venda.jsp">
+            <c:url var="url" value="venda.htm">
                 <c:param name="livro" value="${livro.getId()}" />
             </c:url>
             <tr>

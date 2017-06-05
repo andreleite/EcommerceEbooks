@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
 @Controller
-@RequestMapping("/index.htm")
-public class LivrosController {
+public class VendaController {
 
     @Override
+    @RequestMapping("venda.htm")
     public ModelAndView handleRequest(HttpServletRequest hsr, HttpServletResponse hsr1) throws Exception {
         ModelAndView mv = new ModelAndView("livros");
         

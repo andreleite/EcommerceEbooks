@@ -1,9 +1,3 @@
-<%-- 
-    Document   : venda
-    Created on : Jun 4, 2017, 7:55:42 PM
-    Author     : andreleite
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

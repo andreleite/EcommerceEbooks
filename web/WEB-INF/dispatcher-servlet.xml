@@ -10,7 +10,12 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
-    <bean class="controller.LivrosController" id="livroController" />
+    <bean class="controller.LivrosController" id="livrosController" />
+    <bean class="controller.VendaController" id="vendaController" />
+    
+    <context:annotation-config />
+    <context:component-scan base-package="controller" />
+    <mvc:annotation-driven />
 
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -20,7 +25,8 @@
     <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <props>
-                <prop key="index.htm">livroController</prop>
+                <prop key="index.htm">livrosController</prop>
+                <prop key="venda.htm">vendaController</prop>
             </props>
         </property>
     </bean>
